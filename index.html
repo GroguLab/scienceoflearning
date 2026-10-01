@@ -3,142 +3,111 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tanulási környezetek tervezése – persona kártyák</title>
-<meta name="description" content="Persona kártyák, tervezési checklist, befektetői értékelő és költségtábla a tanulási környezetek tervezéséhez. ELTE PPK, A tanulás támogatása.">
-<link rel="stylesheet" href="assets/style.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#127970;</text></svg>">
+<title>Science of Learning – órai anyagok</title>
+<meta name="description" content="Szemináriumi munkaanyagok a tanulás tudományához: interaktív, telefonról nyitható órai anyagcsomagok.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#129504;</text></svg>">
+<style>
+  :root{
+    --bg:#F6F4F0; --surface:#FFFFFF; --surface-2:#FBF9F6;
+    --ink:#1C1A18; --ink-2:#4A4540; --ink-3:#7A736B;
+    --line:#E2DCD2; --line-2:#CFC6B8;
+    --accent:#0E7C8A; --accent-soft:#E3F1F3;
+    --shadow:0 1px 2px rgba(28,26,24,.05), 0 8px 24px rgba(28,26,24,.06);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#15140F; --surface:#201E1A; --surface-2:#262320;
+      --ink:#F2EEE7; --ink-2:#CFC8BE; --ink-3:#9D958A;
+      --line:#35312B; --line-2:#4A443C;
+      --accent:#4FC2CF; --accent-soft:#143037;
+      --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 28px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#15140F; --surface:#201E1A; --surface-2:#262320;
+    --ink:#F2EEE7; --ink-2:#CFC8BE; --ink-3:#9D958A;
+    --line:#35312B; --line-2:#4A443C;
+    --accent:#4FC2CF; --accent-soft:#143037;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 28px rgba(0,0,0,.35);
+  }
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+    font-size:17px; line-height:1.55; padding:0 16px 72px;
+  }
+  .wrap{max-width:880px; margin:0 auto}
+
+  header{padding:46px 0 26px; border-bottom:1px solid var(--line); margin-bottom:34px}
+  .kicker{font-size:.78rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+          color:var(--ink-3); margin:0 0 10px}
+  h1{font-size:clamp(1.8rem,1.3rem + 2.2vw,2.5rem); line-height:1.15; margin:0 0 .45em;
+     letter-spacing:-.02em}
+  .lead{font-size:1.07rem; color:var(--ink-2); margin:0; max-width:62ch}
+
+  h2{font-size:1.12rem; margin:0 0 14px; letter-spacing:-.01em}
+
+  .card{display:block; background:var(--surface); border:1px solid var(--line);
+        border-radius:14px; box-shadow:var(--shadow); text-decoration:none; color:inherit;
+        padding:20px 22px; transition:transform .12s ease, border-color .12s ease}
+  .card:hover,.card:focus-visible{outline:none; transform:translateY(-2px); border-color:var(--accent)}
+  .card.lead-card{border-color:var(--accent)}
+  .card h3{margin:0 0 6px; font-size:1.22rem; letter-spacing:-.01em}
+  .card p{margin:0; color:var(--ink-3); font-size:.95rem}
+  .row{display:flex; gap:18px; align-items:center; justify-content:space-between; flex-wrap:wrap}
+  .pill{flex:none; font-size:.85rem; font-weight:700; color:var(--accent);
+        background:var(--accent-soft); border-radius:999px; padding:7px 15px; white-space:nowrap}
+  .meta{display:flex; gap:8px; flex-wrap:wrap; margin:14px 0 0}
+  .meta span{font-size:.76rem; font-weight:600; color:var(--ink-2); background:var(--surface-2);
+             border:1px solid var(--line); border-radius:7px; padding:4px 9px}
+
+  .soon{background:var(--surface-2); border:1px dashed var(--line-2); border-radius:14px;
+        padding:18px 22px; color:var(--ink-3); font-size:.93rem; margin-top:14px}
+
+  footer{margin-top:44px; padding-top:18px; border-top:1px solid var(--line);
+         color:var(--ink-3); font-size:.85rem}
+  footer a{color:var(--accent)}
+</style>
 </head>
 <body>
 <div class="wrap">
 
-<header class="page">
-  <p class="kicker">A tanulás támogatása · OTK-TAN22-109 · ELTE PPK</p>
-  <h1>Tanulási környezetek tervezése</h1>
-  <p class="lead">Az iskola új tanulási tereket alakítana ki. Önök pedagógiai tervezőcsapatként
-  megismerik egy-egy tanár munkáját, és megtervezik azt a környezetet, amely a legjobban támogatja
-  az ő pedagógiai elképzeléseit és a diákok aktív tanulását. A terveket a befektetők elé viszik.</p>
+<header>
+  <p class="kicker">GroguLab · ELTE PPK</p>
+  <h1>Science of Learning</h1>
+  <p class="lead">Szemináriumi munkaanyagok a tanulás tudományához. Minden csomag önállóan
+  működő, telefonról QR-kóddal nyitható weboldal: kerettörténet, szerepkártyák, munkalapok.</p>
 </header>
 
-<section style="margin-bottom:34px">
-  <a class="card plain" href="kontextus.html" style="display:block;border-color:var(--accent)">
-    <div class="body" style="display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap">
+<section>
+  <h2>Órai anyagcsomagok</h2>
+
+  <a class="card lead-card" href="tanulasi-kornyezet/">
+    <div class="row">
       <div>
-        <p class="kicker" style="color:var(--accent)">Kezdés · ezt kapják meg elsőként</p>
-        <h3 style="margin:0 0 3px">Kerettörténet</h3>
-        <p class="small muted" style="margin:0">A helyzet összefüggő szövegben; a megrendelők nevére
-        koppintva nyílik a kártyájuk. A csoportok ezt az egy kódot kapják meg.</p>
+        <h3>Tanulási környezetek tervezése</h3>
+        <p>Storytelling-alapú tervezőfeladat: a csapatok egy-egy tanár munkáját megismerve
+        terveznek tanulási teret, majd a befektetők elé viszik a tervet.</p>
       </div>
       <span class="pill">Megnyitás &rarr;</span>
     </div>
+    <div class="meta">
+      <span>A tanulás támogatása · OTK-TAN22-109</span>
+      <span>4 persona + befektetők</span>
+      <span>90–180 perc</span>
+    </div>
   </a>
+
+  <div class="soon">További csomagok ide kerülnek, mindegyik a saját mappájába.</div>
 </section>
 
-<section>
-  <h2 style="margin-bottom:14px">Kit terveznek?</h2>
-  <div class="grid g3">
-
-    <a class="card pcard t-csaba plain" href="persona/csaba.html">
-      <div class="photo"><img src="assets/img/csaba.jpg" alt="Csaba portréja" loading="lazy"></div>
-      <div class="body">
-        <span class="tag">Kutatótér</span>
-        <p class="name" style="margin-top:8px">Csaba</p>
-        <p class="role">természettudomány-tanár, 53</p>
-        <p class="small muted" style="margin:0">Kísérlet, mikroszkóp, csoportos kutatás – a terem legyen inkább kutatóhely.</p>
-        <span class="go">Kártya megnyitása &rarr;</span>
-      </div>
-    </a>
-
-    <a class="card pcard t-laura plain" href="persona/laura.html">
-      <div class="photo"><img src="assets/img/laura.jpg" alt="Laura portréja" loading="lazy"></div>
-      <div class="body">
-        <span class="tag">Irodalmi labor</span>
-        <p class="name" style="margin-top:8px">Laura</p>
-        <p class="role">magyartanár, 38</p>
-        <p class="small muted" style="margin:0">Drámajáték, beszélgetőkör, olvasósarok – olvasni, beszélgetni és alkotni is lehessen.</p>
-        <span class="go">Kártya megnyitása &rarr;</span>
-      </div>
-    </a>
-
-    <a class="card pcard t-daniel plain" href="persona/daniel.html">
-      <div class="photo"><img src="assets/img/daniel.jpg" alt="Dániel portréja" loading="lazy"></div>
-      <div class="body">
-        <span class="tag">Digitális alkotóműhely</span>
-        <p class="name" style="margin-top:8px">Dániel</p>
-        <p class="role">informatikatanár, 28</p>
-        <p class="small muted" style="margin:0">Projektek, AI-eszközök, csapatmunka – műhely legyen, ne géppark.</p>
-        <span class="go">Kártya megnyitása &rarr;</span>
-      </div>
-    </a>
-
-    <a class="card pcard t-nora plain" href="persona/nora.html">
-      <div class="photo"><img src="assets/img/nora.jpg" alt="Nóra portréja" loading="lazy"></div>
-      <div class="body">
-        <span class="tag">Közösségi tér</span>
-        <p class="name" style="margin-top:8px">Nóra</p>
-        <p class="role">iskolaigazgató, 46</p>
-        <p class="small muted" style="margin:0">Ünnepség, verseny, projektnap, kiállítás – és a hétköznapok is.</p>
-        <span class="go">Kártya megnyitása &rarr;</span>
-      </div>
-    </a>
-
-    <a class="card pcard t-befekteto plain" href="persona/befektetok.html">
-      <div class="photo" style="display:flex;align-items:center;justify-content:center;background:var(--befekteto-soft)">
-        <span style="font-size:2.6rem;font-weight:800;color:var(--befekteto);letter-spacing:-.02em">50 M Ft</span>
-      </div>
-      <div class="body">
-        <span class="tag">Befektetők</span>
-        <p class="name" style="margin-top:8px">A döntéshozók</p>
-        <p class="role">szakmai támogatók</p>
-        <p class="small muted" style="margin:0">Pontoznak, kérdeznek, feltételt szabnak – és elosztják az 50 milliót.</p>
-        <span class="go">Kártya megnyitása &rarr;</span>
-      </div>
-    </a>
-
-  </div>
-</section>
-
-<section style="margin-top:38px">
-  <h2 style="margin-bottom:14px">Munkaanyagok</h2>
-  <div class="grid g2">
-    <a class="card plain" href="checklist.html"><div class="body">
-      <p class="kicker">Mindenkinek</p>
-      <h3>Tervezési checklist – egy oldal</h3>
-      <p class="small muted" style="margin:0">Öt szempontcsoport, amin minden tervnek át kell mennie.
-      Ugyanebből pontoznak a befektetők is.</p></div></a>
-
-    <a class="card plain" href="koltsegtabla.html"><div class="body">
-      <p class="kicker">Tervezőcsapatoknak</p>
-      <h3>Költségtábla és eszközkalkulátor</h3>
-      <p class="small muted" style="margin:0">Tájékoztató egységárak, és egy kalkulátor, amivel
-      összeáll az eszközlista és látszik a végösszeg.</p></div></a>
-
-    <a class="card plain" href="befektetoi-lap.html"><div class="body">
-      <p class="kicker">Befektetőknek</p>
-      <h3>Pontozólap és 50M elosztó</h3>
-      <p class="small muted" style="margin:0">Szintleírások 1–4-ig, szöveges visszajelzés,
-      és egy átlátható szabály, ami a pontokból forintot csinál.</p></div></a>
-
-    <a class="card plain" href="galeria.html"><div class="body">
-      <p class="kicker">Csak a bemutatók után</p>
-      <h3>Galéria – látványtervek</h3>
-      <p class="small muted" style="margin:0">AI-val generált térvariációk mind a négy personához.
-      Összehasonlítási anyag az elemző szakaszhoz.</p></div></a>
-
-    <a class="card plain no-print" href="qr.html"><div class="body">
-      <p class="kicker">Oktatónak</p>
-      <h3>QR-kódok</h3>
-      <p class="small muted" style="margin:0">A kódok legenerálása és kinyomtatása a közzétett
-      cím alapján – csapatonként a saját kártyájához.</p></div></a>
-  </div>
-</section>
-
-<section style="margin-top:34px">
-  <div class="note">
-    <strong>A tervezés három terméke:</strong> eszközlista · alaprajz · szakmai bemutatás a befektetőknek.
-    A bemutatók után közösen elemezzük magát a tanulási folyamatot: mi történt a csapatokban,
-    mire figyeltek, mit hagytak ki, és miért.
-  </div>
-</section>
+<footer>
+  <p>A portrék és látványtervek képgenerátorral készültek – nem valós személyeket és nem valós
+  termeket ábrázolnak. Az anyagokban szereplő árak tájékoztató jellegűek, nem árajánlatok.</p>
+  <p><a href="https://github.com/GroguLab/scienceoflearning">Forráskód a GitHubon</a></p>
+</footer>
 
 </div>
 </body>
