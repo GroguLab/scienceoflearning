@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Befektetői pontozólap és 50M elosztó</title>
+<meta name="description" content="Értékelési szempontok szintleírásokkal, szöveges visszajelzés és átlátható szabály az 50 millió forint elosztására.">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#128202;</text></svg>">
+<style>
+  .rub{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:12px}
+  .rc{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:13px 15px;
+      box-shadow:var(--shadow);break-inside:avoid}
+  .rc h3{display:flex;gap:8px;align-items:baseline;margin:0 0 3px;font-size:.98rem}
+  .rc .n{font-size:.7rem;font-weight:800;color:#fff;background:var(--befekteto);border-radius:6px;padding:2px 7px}
+  .rc .q{font-size:.82rem;color:var(--ink-3);font-style:italic;margin:0 0 9px}
+  .anch{display:grid;grid-template-columns:34px 1fr;gap:6px 10px;font-size:.85rem;line-height:1.38}
+  .anch b{color:var(--ink-3);font-size:.78rem;letter-spacing:.04em}
+  .a1 b{color:#A33A2A}.a4 b{color:#2E6042}
+  .scoretable th:first-child{width:auto}
+  .scoretable td.num input{width:60px}
+  .teamname input{font-weight:700}
+  .alloc{background:var(--befekteto-soft);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-top:14px}
+  .allocgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:12px}
+  .ac{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .ac .tn{font-weight:700;font-size:.95rem;margin:0 0 6px}
+  .ac .big{font-size:1.5rem;font-weight:800;letter-spacing:-.02em;color:var(--befekteto);margin:0}
+  .ac .brk{font-size:.78rem;color:var(--ink-3);margin:4px 0 0;line-height:1.4}
+  .fb{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:12px}
+  .fbox{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .fbox h4{margin:0 0 8px;font-size:.9rem}
+  .fbox label{display:block;font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;
+              color:var(--ink-3);margin:9px 0 3px;font-weight:600}
+  .fbox .line{border-bottom:1px dotted var(--line-2);height:1.5em}
+  .steps{counter-reset:s;list-style:none;padding:0;margin:0}
+  .steps li{counter-increment:s;position:relative;padding-left:34px;margin-bottom:11px}
+  .steps li::before{content:counter(s);position:absolute;left:0;top:0;width:23px;height:23px;
+    border-radius:50%;background:var(--accent);color:#fff;font-size:.78rem;font-weight:700;
+    display:flex;align-items:center;justify-content:center}
+  @media print{
+    @page{size:A4 portrait;margin:11mm 10mm}
+    body{font-size:9pt}
+    .rub{grid-template-columns:1fr 1fr;gap:7px}
+    .rc{padding:8px 10px;border-radius:8px}
+    .anch{font-size:8.2pt}
+    .alloc{background:#F4F4F4;break-inside:avoid}
+    .page-break{break-before:page}
+    input{border:0;border-bottom:1px solid #999 !important;border-radius:0}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="backlink no-print" href="index.html">&larr; Vissza az áttekintéshez</a>
+
+<header class="page">
+  <p class="kicker">Befektetői csoport · A tanulás támogatása</p>
+  <h1>Pontozólap és támogatási döntés</h1>
+  <p class="lead">Önök nem zsűri, hanem befektetők: nem azt döntik el, melyik terv a legszebb, hanem azt,
+  melyik tervbe tett forint hoz a legtöbb tanulást. Ezért minden pontszámhoz tartozik indoklás,
+  és minden csapat kap egy <strong>feltételt</strong> is – azt, amit a támogatás fejében módosítania kell.</p>
+</header>
+
+<section>
+  <h2>A keret: 50 000 000 Ft</h2>
+  <div class="grid g2" style="margin-top:10px">
+    <div class="card"><div class="body">
+      <p class="kicker">Alapkeret</p><p style="font-size:1.5rem;font-weight:800;margin:0">20 M Ft</p>
+      <p class="small muted" style="margin:6px 0 0">Minden tervet megillet, egyenlően elosztva
+      (4 csapatnál 5–5 millió). Minden terem kap valamit – a kérdés az, hogy mennyivel többet.</p></div></div>
+    <div class="card"><div class="body">
+      <p class="kicker">Teljesítménykeret</p><p style="font-size:1.5rem;font-weight:800;margin:0">30 M Ft</p>
+      <p class="small muted" style="margin:6px 0 0">A pontszámok arányában oszlik el,
+      fél millióra kerekítve.</p></div></div>
+  </div>
+  <p class="note" style="margin-top:12px">A szabály négy csapatra van beállítva, de bármennyire működik:
+  az alapkeret egyenlően oszlik a csapatok között, a teljesítménykeret pontarányosan.</p>
+</section>
+
+<section style="margin-top:34px">
+  <h2>Hat szempont, 1–4 pont</h2>
+  <p class="small muted" style="margin-bottom:12px">A leírás az <strong>1</strong> és a <strong>4</strong> pontot rögzíti;
+  a 2 és a 3 a kettő között van. Ha az 1. vagy a 2. szempont 1 pontot kap, a csapat kötelezően kap egy
+  <strong>feltételt</strong> is: azt az egy dolgot, amit módosítania kell.</p>
+  <div class="rub">
+
+    <div class="rc"><h3><span class="n">1</span> Pedagógiai illeszkedés</h3>
+      <p class="q">Ennek a tanárnak való ez a terem?</p>
+      <div class="anch">
+        <b class="a1"><b>1</b></b><div class="a1">Általános „modern tanterem”: bármelyik megrendelőhöz passzolna, a tanár szemlélete nem látszik rajta.</div>
+        <b class="a4"><b>4</b></b><div class="a4">A terv konkrét döntéseit vissza lehet vezetni a megrendelő szemléletére; a csapat meg tudja mondani, mit NEM tett bele és miért.</div>
+      </div></div>
+
+    <div class="rc"><h3><span class="n">2</span> Tanulási tevékenységek támogatása</h3>
+      <p class="q">Mit tesz lehetővé a tér, amit most nem lehet?</p>
+      <div class="anch">
+        <b class="a1"><b>1</b></b><div class="a1">Eszközlista tevékenységek nélkül: megvan, mit vennének, de nem derül ki, mit csinálnának vele.</div>
+        <b class="a4"><b>4</b></b><div class="a4">Minden felsorolt tevékenységhez tartozik térelem, és fordítva; az egyéni, páros, csoportos és plenáris munka mind elfér.</div>
+      </div></div>
+
+    <div class="rc"><h3><span class="n">3</span> Térszervezés és mindennapi működés</h3>
+      <p class="q">Hétfő reggel, 32 fővel is működik?</p>
+      <div class="anch">
+        <b class="a1"><b>1</b></b><div class="a1">Szép elrendezés, de nincs közlekedés, tárolás vagy akusztika; az átrendezés idejéről nem esik szó.</div>
+        <b class="a4"><b>4</b></b><div class="a4">Zónák, közlekedés, tárolás, zaj és átállási idő végiggondolva; a terv teli létszámmal is áll.</div>
+      </div></div>
+
+    <div class="rc"><h3><span class="n">4</span> Rugalmasság és befogadás</h3>
+      <p class="q">Kinek nem jó ez a terem?</p>
+      <div class="anch">
+        <b class="a1"><b>1</b></b><div class="a1">Egyetlen használati módra tervezve; a hozzáférés (mozgás, látás, hallás, visszahúzódás) nem jelenik meg.</div>
+        <b class="a4"><b>4</b></b><div class="a4">Többféle használat, más tanár is el tudja használni; mindenki hozzáfér, és van hely a visszahúzódásra is.</div>
+      </div></div>
+
+    <div class="rc"><h3><span class="n">5</span> Megvalósíthatóság és költségvetés</h3>
+      <p class="q">Reális, és rangsorolt?</p>
+      <div class="anch">
+        <b class="a1"><b>1</b></b><div class="a1">Kívánságlista árak nélkül, vagy nagyságrenddel elhibázott összegek; nincs prioritás.</div>
+        <b class="a4"><b>4</b></b><div class="a4">Darabszám és ár szerepel, látszik az első három tétel, és azt is tudják, mi marad el feleannyi pénzből.</div>
+      </div></div>
+
+    <div class="rc"><h3><span class="n">6</span> A bemutatás meggyőző ereje</h3>
+      <p class="q">Érvelés vagy díszlet?</p>
+      <div class="anch">
+        <b class="a1"><b>1</b></b><div class="a1">Felolvasott lista, a kérdésekre nincs válasz, a terv gyenge pontjait nem vállalják.</div>
+        <b class="a4"><b>4</b></b><div class="a4">Egy mondatban megvan a terv lényege, a kérdésekre érvvel válaszolnak, a kompromisszumot maguk nevezik meg.</div>
+      </div></div>
+
+  </div>
+</section>
+
+<section style="margin-top:34px" id="pontozas">
+  <h2>Pontozólap</h2>
+  <p class="small muted">Írják be a csapatok nevét, majd a pontokat. A táblázat magától összead,
+  és kiszámolja a támogatást. Nyomtatva üres lapként is használható.</p>
+  <table class="scoretable" style="margin-top:10px">
+    <thead>
+      <tr><th>Szempont</th>
+        <th class="num teamname"><input type="text" id="n0" placeholder="Csapat 1" aria-label="1. csapat neve"></th>
+        <th class="num teamname"><input type="text" id="n1" placeholder="Csapat 2" aria-label="2. csapat neve"></th>
+        <th class="num teamname"><input type="text" id="n2" placeholder="Csapat 3" aria-label="3. csapat neve"></th>
+        <th class="num teamname"><input type="text" id="n3" placeholder="Csapat 4" aria-label="4. csapat neve"></th></tr>
+    </thead>
+    <tbody id="sbody"></tbody>
+    <tfoot>
+      <tr><th style="font-size:.9rem;text-transform:none;letter-spacing:0;color:var(--ink)">Összesen (max. 24)</th>
+        <td class="num" id="t0">–</td><td class="num" id="t1">–</td>
+        <td class="num" id="t2">–</td><td class="num" id="t3">–</td></tr>
+    </tfoot>
+  </table>
+
+  <div class="alloc">
+    <p class="kicker" style="color:var(--befekteto)">A pontokból forint</p>
+    <p style="margin:0 0 2px"><strong>Alapkeret</strong> 20 M, egyenlően · <strong>Teljesítménykeret</strong> 30 M,
+    pontarányosan, 0,5 M-ra kerekítve.</p>
+    <div class="allocgrid" id="allocgrid"></div>
+    <p class="small" id="fejl" style="margin:12px 0 0"></p>
+  </div>
+
+  <details class="note no-print" style="margin-top:12px">
+    <summary style="cursor:pointer;font-weight:600">Számpélda (ha a kalkulátor nem elérhető)</summary>
+    <p style="margin:10px 0 0">Pontok: 22 · 20 · 17 · 14 (összesen 73). Teljesítménykeret 30 M, pontarányosan:
+    30 × 22/73 = 9,04 → <strong>9,0</strong> · 20/73 = 8,22 → <strong>8,0</strong> ·
+    17/73 = 6,99 → <strong>7,0</strong> · 14/73 = 5,75 → <strong>6,0</strong> millió.
+    Az alapkerettel (5 M/csapat) együtt: <strong>14,0 · 13,0 · 12,0 · 11,0 millió = 50 M</strong>.</p>
+  </details>
+</section>
+
+<section style="margin-top:34px">
+  <h2>Visszajelzés – minden csapatnak</h2>
+  <p class="small muted">A pontszám önmagában nem visszajelzés. Minden csapat ezt a hármat kapja meg szóban is.</p>
+  <table style="margin-top:10px">
+    <thead><tr><th style="width:17%">Csapat</th><th>Ami meggyőzött</th>
+      <th>Amire nem kaptunk választ</th><th>A támogatás feltétele</th></tr></thead>
+    <tbody>
+      <tr><td style="height:3.2em">1.</td><td></td><td></td><td></td></tr>
+      <tr><td style="height:3.2em">2.</td><td></td><td></td><td></td></tr>
+      <tr><td style="height:3.2em">3.</td><td></td><td></td><td></td></tr>
+      <tr><td style="height:3.2em">4.</td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section style="margin-top:34px">
+  <h2>A befektetői csoport menetrendje</h2>
+  <ol class="steps" style="margin-top:12px">
+    <li><strong>Megegyezés.</strong> Melyik szempontban nem engednek? Mit jelent náluk a 4-es? Ki vezeti a pontozást?</li>
+    <li><strong>Közbenső látogatás.</strong> Kérdeznek, de nem tanácsolnak – ebből lesznek a záró kérdéseik.</li>
+    <li><strong>Bemutatók.</strong> Pontozás menet közben, egymástól függetlenül; minden bemutató után legalább egy kérdés.</li>
+    <li><strong>Döntés és kihirdetés.</strong> Összesítés, majd csapatonként: összeg, egy mondat indoklás, egy feltétel.</li>
+  </ol>
+  <div class="note" style="margin-top:14px">
+    <strong>Amire figyeljenek:</strong> a befektetői szerep legnagyobb kockázata, hogy szépségversennyé alakítja a feladatot.
+    Ezt a feltétel ellensúlyozza: a döntés nem ítélet, hanem megbízás a folytatásra.
+  </div>
+</section>
+
+</div>
+
+<script>
+(function(){
+  var CRIT = ["1 · Pedagógiai illeszkedés","2 · Tanulási tevékenységek támogatása",
+    "3 · Térszervezés és működés","4 · Rugalmasság és befogadás",
+    "5 · Megvalósíthatóság és költségvetés","6 · A bemutatás meggyőző ereje"];
+  var BASE = 20000000, PERF = 30000000, STEP = 500000;
+  var tb = document.getElementById('sbody');
+  CRIT.forEach(function(c,i){
+    var tr = document.createElement('tr');
+    var th = document.createElement('th');
+    th.textContent = c;
+    th.style.cssText = 'font-size:.88rem;text-transform:none;letter-spacing:0;color:var(--ink);font-weight:500';
+    tr.appendChild(th);
+    for (var j=0;j<4;j++){
+      var td = document.createElement('td'); td.className='num';
+      var inp = document.createElement('input');
+      inp.type='number'; inp.min=1; inp.max=4; inp.step=1;
+      inp.dataset.team=j; inp.setAttribute('aria-label', c+' – '+(j+1)+'. csapat');
+      inp.addEventListener('input', recalc);
+      td.appendChild(inp); tr.appendChild(td);
+    }
+    tb.appendChild(tr);
+  });
+
+  function fmt(n){ return (n/1000000).toLocaleString('hu-HU',{minimumFractionDigits:1,maximumFractionDigits:1}) + ' M Ft'; }
+
+  function recalc(){
+    var totals=[0,0,0,0], active=[false,false,false,false];
+    tb.querySelectorAll('input').forEach(function(inp){
+      var v = parseInt(inp.value,10);
+      if (!isNaN(v) && v>=1 && v<=4){ totals[inp.dataset.team]+=v; active[inp.dataset.team]=true; }
+    });
+    for (var j=0;j<4;j++){
+      document.getElementById('t'+j).textContent = active[j] ? totals[j] : '–';
+    }
+    var act = [0,1,2,3].filter(function(j){return active[j];});
+    var grid = document.getElementById('allocgrid');
+    grid.innerHTML='';
+    var fejl = document.getElementById('fejl');
+    if (!act.length){ fejl.textContent=''; grid.innerHTML='<p class="small muted" style="margin:0">Írják be a pontokat, és itt jelenik meg a támogatás.</p>'; return; }
+    var sum = act.reduce(function(a,j){return a+totals[j];},0);
+    var basePer = Math.round(BASE/act.length/STEP)*STEP;
+    var given = 0, perf = {}, best = act[0];
+    act.forEach(function(j){
+      var p = sum ? Math.round(PERF*totals[j]/sum/STEP)*STEP : 0;
+      perf[j]=p; given+=p;
+      if (totals[j] > totals[best]) best = j;
+    });
+    perf[best] += (PERF - given);              // a kerekítés különbözete a legjobb csapathoz
+    act.forEach(function(j){
+      var nm = document.getElementById('n'+j).value.trim() || ('Csapat '+(j+1));
+      var tot = basePer + perf[j];
+      var d = document.createElement('div'); d.className='ac';
+      d.innerHTML = '<p class="tn"></p><p class="big">'+fmt(tot)+'</p>'+
+        '<p class="brk">'+totals[j]+' pont · alap '+fmt(basePer)+' + teljesítmény '+fmt(perf[j])+'</p>';
+      d.querySelector('.tn').textContent = nm;
+      grid.appendChild(d);
+    });
+    var osszes = basePer*act.length + PERF;
+    fejl.innerHTML = '<strong>Kiosztva összesen: '+fmt(osszes)+'</strong>' +
+      (osszes !== 50000000 ? ' (a teljes keret 50,0 M Ft)' : '.');
+  }
+
+  ['n0','n1','n2','n3'].forEach(function(id){
+    document.getElementById(id).addEventListener('input', recalc);
+  });
+  recalc();
+})();
+</script>
+</body>
+</html>

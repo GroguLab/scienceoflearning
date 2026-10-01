@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Új tanulási terek az iskolában</title>
+<meta name="description" content="A tervezőfeladat kerettörténete – a megrendelők a nevükre koppintva ismerhetők meg.">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#128220;</text></svg>">
+<style>
+  .story{max-width:660px;margin:0 auto}
+  .story p{font-size:1.06rem;line-height:1.62;margin:0 0 1.05em;
+    text-align:justify;text-justify:inter-word;hyphens:auto;-webkit-hyphens:auto}
+  .story p.close{text-align:left;hyphens:manual}
+  .story p.first::first-letter{font-size:2.9rem;line-height:.84;float:left;
+    padding:4px 10px 0 0;font-weight:700;color:var(--accent)}
+  .story h1{font-size:clamp(1.7rem,1.2rem + 2vw,2.4rem);margin-bottom:.5em}
+  .hint{font-size:.88rem;color:var(--ink-3);margin:30px 0 0;padding-top:16px;
+        border-top:1px solid var(--line)}
+  a.who{font-weight:700;text-decoration:none;padding:2px 6px;border-radius:6px;
+        white-space:nowrap}
+  a.who:hover,a.who:focus-visible{outline:none;filter:brightness(.94)}
+  a.w-csaba{color:var(--csaba);background:var(--csaba-soft)}
+  a.w-laura{color:var(--laura);background:var(--laura-soft)}
+  a.w-daniel{color:var(--daniel);background:var(--daniel-soft)}
+  a.w-nora{color:var(--nora);background:var(--nora-soft)}
+  a.w-befekteto{color:var(--befekteto);background:var(--befekteto-soft)}
+  .close{font-size:1.1rem;font-weight:600;color:var(--ink);margin:1.6em 0 .9em}
+  .pick{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:40px}
+  .pick .n{display:flex;align-items:center;justify-content:center;text-align:center;
+    min-height:74px;padding:12px 10px;border-radius:12px;text-decoration:none;
+    font-size:1.05rem;font-weight:700;letter-spacing:-.01em;
+    border:1px solid currentColor;box-shadow:var(--shadow)}
+  .pick .n:hover,.pick .n:focus-visible{outline:none;filter:brightness(.96);transform:translateY(-1px)}
+  .n-csaba{color:var(--csaba);background:var(--csaba-soft)}
+  .n-laura{color:var(--laura);background:var(--laura-soft)}
+  .n-daniel{color:var(--daniel);background:var(--daniel-soft)}
+  .n-nora{color:var(--nora);background:var(--nora-soft)}
+  .n-befekteto{color:var(--befekteto);background:var(--befekteto-soft)}
+  @media print{
+    @page{size:A4 portrait;margin:16mm 18mm}
+    body{font-size:10.5pt}
+    .story{max-width:none}
+    .story p{font-size:10.5pt;line-height:1.5;margin-bottom:.8em;text-align:justify;hyphens:auto}
+    a.who{background:none;padding:0;text-decoration:underline}
+    .pick{grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:0}
+    .pick .n{min-height:52px;font-size:10pt;box-shadow:none;border-radius:8px}
+  }
+</style>
+</head>
+<body>
+<div class="story">
+
+<header class="page" style="border:0;padding:30px 0 6px">
+  <p class="kicker">A tervezőfeladat</p>
+  <h1>Új tanulási terek az iskolában</h1>
+</header>
+
+<p class="first">Az iskola új tanulási tereket alakítana ki. Nem néhány tanterem átrendezéséről van szó:
+olyan környezetekre van szükség, amelyek tényleg támogatják a különböző tanítási és tanulási formákat.
+A vezetés tudja, hogy ehhez kevés a jó szándék meg egy bútorkatalógus – ezért pedagógiai tervezőcsapatokat
+hívott segítségül. Önök ezek a csapatok.</p>
+
+<p>Minden csapat egy megrendelővel dolgozik. <a class="who w-csaba" href="persona/csaba.html">Csaba</a>
+harminc éve tanít biológiát és földrajzot, és azt szeretné, ha a terem inkább kutatóhelyre hasonlítana.
+<a class="who w-laura" href="persona/laura.html">Laura</a> óráin jeleneteket játszanak és beszélgetőkörben
+vitáznak, de minden alkalommal el kell tolni a padokat.
+<a class="who w-daniel" href="persona/daniel.html">Dániel</a> diákjai projekteken dolgoznak, négyen-öten
+egy képernyő körül – ő nem géptermet akar, hanem műhelyt.
+<a class="who w-nora" href="persona/nora.html">Nóra</a> igazgatóként azt nézi, hogy az iskola közösség is
+legyen, és hogy a nagy tér ne csak évi tíz napon legyen használható.</p>
+
+<p>A csapat dolga, hogy megértse a megrendelőjét, és az ötleteiből átgondolt térkoncepciót formáljon.
+A tanárok sok mindent szeretnének; nem minden fér bele, és nem minden jó ötlet. A kész terv később mérnökök
+és kivitelezők kezébe kerül, ők ez alapján dolgoznak tovább – vagyis nem látványkép a cél, hanem olyan
+döntéssor, amit tovább lehet adni.</p>
+
+<p>A megvalósításra 50 millió forint áll rendelkezésre. Hogy ebből melyik terv mennyit kap,
+nem a vezetés dönti el: erre vannak <a class="who w-befekteto" href="persona/befektetok.html">a befektetők</a>,
+akik nem terveznek, hanem szempontokat egyeztetnek, munka közben kérdeznek, a bemutatók után pontoznak,
+és minden forintot megindokolnak.</p>
+
+<p class="close">Most válasszanak szerepet.</p>
+
+<nav class="pick">
+  <a class="n n-csaba" href="persona/csaba.html">Csaba</a>
+  <a class="n n-laura" href="persona/laura.html">Laura</a>
+  <a class="n n-daniel" href="persona/daniel.html">Dániel</a>
+  <a class="n n-nora" href="persona/nora.html">Nóra</a>
+  <a class="n n-befekteto" href="persona/befektetok.html">Befektetők</a>
+</nav>
+
+
+
+</div>
+</body>
+</html>
