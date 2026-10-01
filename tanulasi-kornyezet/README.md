@@ -20,16 +20,28 @@ storytelling-alapú tervezőfeladatához. Telefonról, QR-kóddal nyitható.
 Nincs build, nincs függőség: sima HTML + egy CSS + néhány soros JS.
 A QR-oldal egyetlen külső könyvtárat tölt be CDN-ről (qrcode-generator, MIT); minden más offline is működik.
 
-## Közzététel GitHub Pages-en
+## Hol él ez az anyag
 
-1. Új repó a GitHubon (pl. `tanulasi-kornyezet`), **Public**.
-2. Töltse fel ennek a mappának a *tartalmát* (ne magát a mappát): `index.html`, `assets/`, `persona/`, a többi `.html` és ez a README.
-   Böngészőből: *Add file → Upload files*, majd a mappákat is be lehet húzni.
-3. **Settings → Pages → Build and deployment → Source: Deploy from a branch**, branch: `main`, folder: `/ (root)`. *Save*.
-4. 1–2 perc múlva él: `https://FELHASZNALONEV.github.io/tanulasi-kornyezet/`
-5. Nyissa meg a `qr.html`-t ezen a címen – az alap-URL magától kitöltődik –, és nyomtassa ki a kódokat.
-6. Órán elég egyetlen kód: a **kontextus kártyáé**. A csoportok ebből olvassák a helyzetet,
-   és ebből nyitják meg a választott szerep kártyáját. A galéria kódját csak a bemutatók után ossza ki.
+Ez a mappa a [GroguLab/scienceoflearning](https://github.com/GroguLab/scienceoflearning)
+repó része, és GitHub Pages-en jelenik meg:
+
+**https://grogulab.github.io/scienceoflearning/tanulasi-kornyezet/**
+
+A repó gyökerében egy gyűjtő főlap van, onnan is ide nyílik az út.
+
+### Az órai használat menete
+
+1. Nyissa meg a `qr.html`-t a fenti élő címen – az alap-URL magától kitöltődik –,
+   és nyomtassa ki a kódokat.
+2. Órán elég egyetlen kód: a **kerettörténeté** (`kontextus.html`). A csoportok ebből
+   olvassák a helyzetet, és ebből nyitják meg a választott szerep kártyáját.
+3. A galéria kódját **csak a bemutatók után** ossza ki.
+
+### Ha külön, önálló oldalként szeretné közzétenni
+
+A mappa zárt egység, a benne lévő oldalak csak egymásra hivatkoznak. Töltse fel ennek a
+mappának a *tartalmát* (ne magát a mappát) egy új, public repó gyökerébe, majd
+**Settings → Pages → Source: Deploy from a branch**, branch: `main`, folder: `/ (root)`.
 
 ## Mit érdemes testre szabni
 
