@@ -1,7 +1,6 @@
-# Tanulási környezetek tervezése – órai anyagok
+# Tanulási környezetek tervezése
 
-Statikus weboldal az **A tanulás támogatása** (OTK-TAN22-109, ELTE PPK) szeminárium
-storytelling-alapú tervezőfeladatához. Telefonról, QR-kóddal nyitható.
+Storytelling-alapú tervezőfeladat statikus weboldalként. Telefonról, QR-kóddal nyitható.
 
 ## Mit tartalmaz
 
@@ -14,7 +13,7 @@ storytelling-alapú tervezőfeladatához. Telefonról, QR-kóddal nyitható.
 | `checklist.html` | mindenkinek | egyoldalas tervezési ellenőrzőlista (A4-re nyomtatható) |
 | `befektetoi-lap.html` | befektetőknek | pontozólap szintleírásokkal + automatikus 50M-elosztó |
 | `koltsegtabla.html` | tervezőcsapatoknak | tájékoztató egységárak + eszközkalkulátor |
-| `galeria.html` | **csak a bemutatók után** | a négy AI-val generált látványterv, kísérőszöveg nélkül |
+| `galeria.html` | **tanári anyagok** | a négy AI-val generált látványterv, jelszóval védve |
 | `qr.html` | oktatónak | QR-kódok generálása és nyomtatása |
 
 Nincs build, nincs függőség: sima HTML + egy CSS + néhány soros JS.
@@ -31,11 +30,12 @@ A repó gyökerében egy gyűjtő főlap van, onnan is ide nyílik az út.
 
 ### Az órai használat menete
 
-1. Nyissa meg a `qr.html`-t a fenti élő címen – az alap-URL magától kitöltődik –,
-   és nyomtassa ki a kódokat.
-2. Órán elég egyetlen kód: a **kerettörténeté** (`kontextus.html`). A csoportok ebből
-   olvassák a helyzetet, és ebből nyitják meg a választott szerep kártyáját.
-3. A galéria kódját **csak a bemutatók után** ossza ki.
+1. A csoportok a **kerettörténetet** (`kontextus.html`) kapják meg. Ebből olvassák a
+   helyzetet, és ebből nyitják meg a választott szerep kártyáját.
+2. A `qr.html` legenerálja a kódokat a közzétett cím alapján, ha QR-ral osztaná ki
+   (sehonnan nincs rá link, csak a saját címén érhető el).
+3. A **tanári anyagok** (`galeria.html`) jelszóval nyílnak. A jelszó a fájl alján,
+   a script elején állítható.
 
 ### Ha külön, önálló oldalként szeretné közzétenni
 
@@ -51,6 +51,8 @@ mappának a *tartalmát* (ne magát a mappát) egy új, public repó gyökerébe
   `BASE` (alapkeret, 20 M), `PERF` (teljesítménykeret, 30 M), `STEP` (kerekítés, 0,5 M).
 - **Árak:** `koltsegtabla.html`, a táblázat sorai. Az `f` jelölés ellenőrzött webshop-árat,
   a `b` nagyságrendi becslést jelent.
+- **A tanári anyagok jelszava:** `galeria.html` alján a script `H` értéke. Ez nem valódi
+  védelem, csak annyi, hogy senki ne botoljon bele véletlenül a látványtervekbe.
 
 ## Forrásokról
 
