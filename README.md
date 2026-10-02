@@ -1,16 +1,14 @@
-# Science of Learning – órai anyagok
+# Science of Learning
 
-Szemináriumi munkaanyagok a tanulás tudományához (GroguLab, ELTE PPK).
-Minden anyagcsomag önállóan működő statikus weboldal: nincs build, nincs függőség,
-telefonról QR-kóddal nyitható.
+GroguLab
 
 **Élő oldal:** https://grogulab.github.io/scienceoflearning/
 
 ## Csomagok
 
-| Mappa | Kurzus | Mi ez |
-|---|---|---|
-| [`tanulasi-kornyezet/`](tanulasi-kornyezet/) | A tanulás támogatása · OTK-TAN22-109 | Storytelling-alapú tervezőfeladat: persona kártyák, tervezési checklist, befektetői pontozólap, költségkalkulátor, látványterv-galéria |
+| Mappa | Mi ez |
+|---|---|
+| [`tanulasi-kornyezet/`](tanulasi-kornyezet/) | Storytelling-alapú tervezőfeladat: persona kártyák, tervezési checklist, befektetői pontozólap, költségkalkulátor, látványtervek |
 
 Új csomag hozzáadása: tegye a saját mappájába, és vegyen fel egy sort a gyökér
 `index.html` „Órai anyagcsomagok" szakaszába, valamint ebbe a táblázatba.
@@ -20,13 +18,12 @@ telefonról QR-kóddal nyitható.
 ```
 .
 ├── index.html              gyűjtő főlap – innen nyílik minden csomag
-├── .nojekyll               a GitHub Pages ne futtasson Jekyllt
 └── tanulasi-kornyezet/     egy teljes anyagcsomag (saját README-vel)
-    ├── index.html          oktatói áttekintés
+    ├── index.html          áttekintés – megrendelők, befektetők, munkaanyagok
     ├── kontextus.html      kerettörténet – ezt kapják a csoportok elsőként
     ├── persona/            szerepkártyák
     ├── assets/             közös stíluslap és képek
-    └── ...                 munkalapok, QR-generátor
+    └── ...                 munkalapok, tanári anyagok, QR-generátor
 ```
 
 Minden csomag a saját mappájában zárt egység: a benne lévő oldalak csak egymásra és
