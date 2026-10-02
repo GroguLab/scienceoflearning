@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tervezési checklist – tanulási környezetek</title>
+<meta name="description" content="Egyoldalas ellenőrzőlista tanulási környezetek tervezéséhez: tevékenység és tér, fizikai feltételek, társas tér, digitális réteg, működés és pénz.">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#9745;</text></svg>">
+<style>
+  .sheet{max-width:960px;margin:0 auto}
+  .chead{display:flex;gap:18px;align-items:flex-end;justify-content:space-between;
+         border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:16px;flex-wrap:wrap}
+  .cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:12px}
+  .cb{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px 10px;
+      box-shadow:var(--shadow);break-inside:avoid}
+  .cb h2{display:flex;align-items:baseline;gap:8px;font-size:.95rem;text-transform:none;letter-spacing:0;
+         color:var(--ink);margin:0 0 2px}
+  .cb .n{font-size:.72rem;font-weight:800;color:#fff;background:var(--accent);border-radius:6px;
+         padding:2px 7px;letter-spacing:.02em}
+  .cb .q{font-size:.8rem;color:var(--ink-3);margin:0 0 9px;font-style:italic}
+  .cb ul{list-style:none;margin:0;padding:0}
+  .cb li{position:relative;padding-left:21px;margin-bottom:7px;font-size:.88rem;line-height:1.38}
+  .cb li::before{content:"";position:absolute;left:0;top:.26em;width:12px;height:12px;
+                 border:1.5px solid var(--line-2);border-radius:3px}
+  .cb li .src{color:var(--ink-3);font-size:.76rem}
+  .three{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:12px}
+  .three div{background:var(--accent-soft);border-radius:10px;padding:11px 13px;font-size:.88rem;
+             color:var(--ink);line-height:1.4}
+  .three .kicker{color:var(--accent);margin-bottom:4px}
+  .warn{margin-top:12px;border:1px solid var(--line-2);border-left:3px solid #B5541F;border-radius:10px;
+        padding:10px 13px;font-size:.84rem;background:var(--surface-2);color:var(--ink-2)}
+  .srcline{margin-top:10px;font-size:.72rem;color:var(--ink-3);line-height:1.4}
+  @media print{
+    @page{size:A4 portrait;margin:11mm 10mm}
+    body{font-size:8.6pt}
+    .sheet{max-width:none}
+    .cgrid{grid-template-columns:1fr 1fr;gap:7px}
+    .cb{padding:8px 10px 6px;border-radius:8px}
+    .cb li{margin-bottom:4px;font-size:8.4pt;line-height:1.3;padding-left:17px}
+    .cb li::before{width:9px;height:9px;top:.22em}
+    .cb h2{font-size:9.6pt}.cb .q{font-size:8pt;margin-bottom:5px}
+    .three{gap:7px;margin-top:7px}.three div{padding:7px 9px;font-size:8.2pt;background:#F2F2F2}
+    .warn{margin-top:7px;padding:6px 9px;font-size:7.8pt}
+    .srcline{font-size:6.8pt;margin-top:6px}
+    .chead{margin-bottom:9px;padding-bottom:6px}
+    h1{font-size:15pt;margin-bottom:.15em}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+<a class="backlink no-print" data-back href="index.html">&larr; Vissza az áttekintéshez</a>
+
+<div class="chead">
+  <div>
+    <p class="kicker" style="margin-bottom:2px">Tervezési segédlet</p>
+    <h1 style="margin:0">Tervezési checklist</h1>
+    <p class="small muted" style="margin:4px 0 0">Nem minden pontnak kell teljesülnie – de minden pontról
+    tudniuk kell, mit döntöttek és miért. A befektetők ugyanebből a listából pontoznak.</p>
+  </div>
+  <div class="small muted" style="text-align:right;min-width:150px">
+    Csapat: ______________<br>Megrendelő: ______________
+  </div>
+</div>
+
+<div class="cgrid">
+
+  <section class="cb">
+    <h2><span class="n">1</span> Tevékenység és tér</h2>
+    <p class="q">Mit tesz lehetővé a tér – és mit zár ki?</p>
+    <ul>
+      <li>A megrendelő minden felsorolt tevékenységéhez tudunk mutatni egy konkrét térelemet.</li>
+      <li>Van hely egyéni, páros, kiscsoportos <em>és</em> plenáris munkára.</li>
+      <li>Az átrendezés két percen belül, a tanulókkal együtt megy.</li>
+      <li>A félkész munka megmaradhat: van hol kiállítani és hova visszatenni.</li>
+      <li>Tudjuk, melyik tevékenységet zárja ki a terv – és vállaljuk.</li>
+    </ul>
+  </section>
+
+  <section class="cb">
+    <h2><span class="n">2</span> Fizikai feltételek</h2>
+    <p class="q">Amitől a tér nemcsak szép, hanem használható.</p>
+    <ul>
+      <li>Közlekedés: mindenki a helyére jut anélkül, hogy átmenne egy másik csoporton.</li>
+      <li>Akusztika: két csoport egyszerre is tud beszélgetni. <span class="src">(Shield &amp; Dockrell 2008; ANSI/ASA S12.60)</span></li>
+      <li>Fény és levegő: természetes fény, szabályozható árnyékolás, szellőzés. <span class="src">(Barrett és mtsai 2015)</span></li>
+      <li>Tárolás: minden eszköznek van helye, ahová vissza is kerül.</li>
+      <li>Áram ott van, ahol dolgoznak; a kábel nem a padlón fut.</li>
+    </ul>
+  </section>
+
+  <section class="cb">
+    <h2><span class="n">3</span> Társas tér</h2>
+    <p class="q">Kié ez a terem?</p>
+    <ul>
+      <li>A tanulók látják egymást, nem csak a táblát.</li>
+      <li>Van hova visszahúzódni annak, akinek sok az inger.</li>
+      <li>A tanár helye nem egyetlen fix pont; bárhová el tud jutni.</li>
+      <li>A falon a tanulók munkája van, nem csak dekoráció.</li>
+      <li>Van a térben valami, amit a tanulók maguk alakíthatnak.</li>
+    </ul>
+  </section>
+
+  <section class="cb">
+    <h2><span class="n">4</span> Digitális réteg</h2>
+    <p class="q">A technika szolgál, nem ural.</p>
+    <ul>
+      <li>Minden eszközhöz tartozik egy tevékenység – nem fordítva.</li>
+      <li>A közös kijelző onnan is látszik, ahol tényleg ülnek.</li>
+      <li>Van terv arra, amikor <em>nem</em> kell gép: hol van ilyenkor?</li>
+      <li>Töltés, tárolás, karbantartás: ki, mikor, hol.</li>
+      <li>A terem akkor is működik, ha a net lassú vagy elmegy.</li>
+    </ul>
+  </section>
+
+  <section class="cb">
+    <h2><span class="n">5</span> Működés és pénz</h2>
+    <p class="q">Hétfő reggel is így lesz?</p>
+    <ul>
+      <li>32 fővel is működik, nemcsak 24-gyel.</li>
+      <li>Mindenki hozzáfér: mozgás, látás, hallás, testmagasság.</li>
+      <li>Más tanár is el tudja használni – helyettesítéskor is érthető.</li>
+      <li>Látszik a sorrend: mi az első három tétel, és mi marad el, ha kevesebb a pénz.</li>
+      <li>Ami ingyen van (elrendezés, szabályok, szokásrend), az is szerepel a tervben.</li>
+    </ul>
+  </section>
+
+  <section class="cb">
+    <h2><span class="n">6</span> A bemutatás</h2>
+    <p class="q">Amit a befektetők hallani fognak.</p>
+    <ul>
+      <li>Egy mondatban elmondható, mitől <em>ez</em> a terem való <em>ennek</em> a tanárnak.</li>
+      <li>Az alaprajzon mérhető: hány fő, mekkora zóna, hol a közlekedés.</li>
+      <li>Az eszközlistán ár és darabszám is van.</li>
+      <li>Vállalunk egy kompromisszumot, és meg is nevezzük.</li>
+      <li>Van válaszunk arra: honnan tudjuk, hogy ez jó lesz?</li>
+    </ul>
+  </section>
+
+</div>
+
+<h2 style="margin:22px 0 10px;font-size:1.05rem">Reflexió</h2>
+<div class="three">
+  <div>Mit tud ez a tér, amit a mostani nem?</div>
+  <div>Mit hagynánk ki először, ha feleannyi pénz lenne?</div>
+  <div>Mit néznénk meg három hónap múlva, hogy kiderüljön: működik-e?</div>
+</div>
+
+<p class="srcline">
+  Hivatkozott források: Barrett és mtsai (2015) <em>Building and Environment</em> ·
+  Shield &amp; Dockrell (2008) <em>JASA</em> · ANSI/ASA S12.60-2010 (tantermi akusztikai szabvány) ·
+  Wannarka &amp; Ruhl (2008) az ülésrendről · Kariippanon és mtsai (2021) a rugalmas tantermekről ·
+  Dumont, Istance &amp; Benavides (2010) <em>The Nature of Learning</em>, OECD.
+</p>
+
+<div class="pagenav no-print">
+  <a class="navbtn solid" data-back href="index.html">&larr; Vissza az áttekintéshez</a>
+  <span class="spacer"></span>
+  <a class="navbtn" data-keep href="koltsegtabla.html">Költségtábla</a>
+</div>
+
+</div>
+<script>
+(function(){
+  var NEV = {csaba:'Csaba', laura:'Laura', daniel:'Dániel', nora:'Nóra', befektetok:'a befektetői'};
+  var m = /[?&]from=([a-z]+)/.exec(location.search);
+  var k = m && NEV[m[1]] ? m[1] : null;
+  if (!k) return;
+  var cim = (k === 'befektetok') ? 'Vissza a befektetői kártyához'
+                                 : 'Vissza ' + NEV[k] + ' kártyájához';
+  var url = 'persona/' + k + '.html';
+  document.querySelectorAll('[data-back]').forEach(function(a){
+    a.setAttribute('href', url);
+    a.innerHTML = '\u2190 ' + cim;
+  });
+  document.querySelectorAll('[data-keep]').forEach(function(a){
+    var h = a.getAttribute('href');
+    if (h && h.indexOf('from=') < 0) a.setAttribute('href', h + '?from=' + k);
+  });
+})();
+</script>
+</body>
+</html>
