@@ -11,7 +11,7 @@ GroguLab
 | [`tanulasi-kornyezet/`](tanulasi-kornyezet/) | Storytelling-alapú tervezőfeladat: persona kártyák, tervezési checklist, befektetői pontozólap, költségkalkulátor, látványtervek |
 
 Új csomag hozzáadása: tegye a saját mappájába, és vegyen fel egy sort a gyökér
-`index.html` „Órai anyagcsomagok" szakaszába, valamint ebbe a táblázatba.
+`index.html` „Projektek" szakaszába, valamint ebbe a táblázatba.
 
 ## Szerkezet
 
