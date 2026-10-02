@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Költségtábla és eszközkalkulátor</title>
+<meta name="description" content="Tájékoztató bruttó egységárak tanulási környezetek tervezéséhez, beépített kalkulátorral.">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#128181;</text></svg>">
+<style>
+  tr.cat th{background:var(--accent-soft);color:var(--accent);font-size:.76rem;letter-spacing:.1em;
+            text-transform:uppercase;padding:9px 10px;border-bottom:1px solid var(--line)}
+  td.u{color:var(--ink-3);font-size:.82rem;white-space:nowrap}
+  td.out{font-weight:600}
+  .src{display:inline-block;width:14px;height:14px;line-height:14px;text-align:center;border-radius:4px;
+       font-size:.62rem;font-weight:800;margin-left:5px;vertical-align:1px}
+  .src.f{background:var(--accent-soft);color:var(--accent)}
+  .src.b{background:var(--line);color:var(--ink-3)}
+  .bar{position:sticky;bottom:0;background:var(--surface);border:1px solid var(--line-2);
+       border-radius:12px;box-shadow:var(--shadow);padding:12px 16px;margin-top:16px;
+       display:flex;gap:18px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+  .bar .tot{font-size:1.5rem;font-weight:800;letter-spacing:-.02em}
+  .bar .rem{font-size:.9rem;color:var(--ink-3)}
+  .bar .rem.over{color:#B5541F;font-weight:700}
+  @media print{
+    @page{size:A4 portrait;margin:11mm 10mm}
+    body{font-size:8.4pt}
+    th,td{padding:3px 5px}
+    .bar{position:static;box-shadow:none}
+    input{border:0;border-bottom:1px solid #999 !important;border-radius:0;width:46px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<a class="backlink no-print" data-back href="index.html">&larr; Vissza az áttekintéshez</a>
+
+<header class="page">
+  <p class="kicker">Tervezőcsapatoknak</p>
+  <h1>Költségtábla és eszközkalkulátor</h1>
+  <p class="lead">Írják be a darabszámokat, és a lap alján látják, hol tartanak.</p>
+  <p class="small muted" style="margin:0">
+    <span class="src f">f</span> webshop-ár alapján ellenőrzött nagyságrend &nbsp;·&nbsp;
+    <span class="src b">b</span> becslés, piaci tapasztalat alapján</p>
+</header>
+
+<table>
+  <thead><tr><th>Tétel</th><th>Egység</th><th class="num">Egységár (Ft)</th>
+  <th class="num">Mennyiség</th><th class="num">Összesen (Ft)</th></tr></thead>
+  <tbody>
+<tr class="cat"><th colspan="5">Alapbútorzat</th></tr>
+<tr><td>Tanulói asztal, állítható magasságú (1 fő) <span class="src f" title="webshop-ár alapján ellenőrizve">f</span></td><td class="u">db</td><td class="num">40 000</td><td class="num"><input type="number" min="0" step="1" data-price="40000" aria-label="Tanulói asztal, állítható magasságú (1 fő) darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Csoportasztal / trapézasztal (2–3 fő) <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">db</td><td class="num">55 000</td><td class="num"><input type="number" min="0" step="1" data-price="55000" aria-label="Csoportasztal / trapézasztal (2–3 fő) darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Tanulói szék, csővázas <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">db</td><td class="num">16 000</td><td class="num"><input type="number" min="0" step="1" data-price="16000" aria-label="Tanulói szék, csővázas darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Görgős, állítható munkaszék (labor, stúdió) <span class="src f" title="webshop-ár alapján ellenőrizve">f</span></td><td class="u">db</td><td class="num">46 000</td><td class="num"><input type="number" min="0" step="1" data-price="46000" aria-label="Görgős, állítható munkaszék (labor, stúdió) darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Puff, ülőpárna <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">db</td><td class="num">20 000</td><td class="num"><input type="number" min="0" step="1" data-price="20000" aria-label="Puff, ülőpárna darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Fotel, babzsák (olvasósarok) <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">db</td><td class="num">45 000</td><td class="num"><input type="number" min="0" step="1" data-price="45000" aria-label="Fotel, babzsák (olvasósarok) darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Tanári asztal vagy mobil pult <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">db</td><td class="num">70 000</td><td class="num"><input type="number" min="0" step="1" data-price="70000" aria-label="Tanári asztal vagy mobil pult darabszám"></td><td class="num out">0</td></tr>
+<tr class="cat"><th colspan="5">Tárolás és felületek</th></tr>
+<tr><td>Polcos, ajtós szekrény (magas) <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">db</td><td class="num">120 000</td><td class="num"><input type="number" min="0" step="1" data-price="120000" aria-label="Polcos, ajtós szekrény (magas) darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Nyitott könyvespolc-rendszer <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">db</td><td class="num">90 000</td><td class="num"><input type="number" min="0" step="1" data-price="90000" aria-label="Nyitott könyvespolc-rendszer darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Gurulós tárolókocsi (eszközöknek) <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">db</td><td class="num">65 000</td><td class="num"><input type="number" min="0" step="1" data-price="65000" aria-label="Gurulós tárolókocsi (eszközöknek) darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Mobil fehértábla, kétoldalas, kerekes <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">db</td><td class="num">70 000</td><td class="num"><input type="number" min="0" step="1" data-price="70000" aria-label="Mobil fehértábla, kétoldalas, kerekes darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Kiállítófelület: parafa / mágneses sáv <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">m²</td><td class="num">15 000</td><td class="num"><input type="number" min="0" step="1" data-price="15000" aria-label="Kiállítófelület: parafa / mágneses sáv darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Zárható tárolóboxok (félkész munkáknak, 10 db) <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">készlet</td><td class="num">45 000</td><td class="num"><input type="number" min="0" step="1" data-price="45000" aria-label="Zárható tárolóboxok (félkész munkáknak, 10 db) darabszám"></td><td class="num out">0</td></tr>
+<tr class="cat"><th colspan="5">Digitális eszközök</th></tr>
+<tr><td>Interaktív kijelző, 75&quot; <span class="src f" title="webshop-ár alapján ellenőrizve">f</span></td><td class="u">db</td><td class="num">650 000</td><td class="num"><input type="number" min="0" step="1" data-price="650000" aria-label="Interaktív kijelző, 75&quot; darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Projektor + vetítővászon <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">db</td><td class="num">350 000</td><td class="num"><input type="number" min="0" step="1" data-price="350000" aria-label="Projektor + vetítővászon darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Tanulói laptop <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">db</td><td class="num">300 000</td><td class="num"><input type="number" min="0" step="1" data-price="300000" aria-label="Tanulói laptop darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Tablet <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">db</td><td class="num">150 000</td><td class="num"><input type="number" min="0" step="1" data-price="150000" aria-label="Tablet darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Laptop/tablet töltő- és tárolókocsi (30 eszköz) <span class="src f" title="webshop-ár alapján ellenőrizve">f</span></td><td class="u">db</td><td class="num">968 000</td><td class="num"><input type="number" min="0" step="1" data-price="968000" aria-label="Laptop/tablet töltő- és tárolókocsi (30 eszköz) darabszám"></td><td class="num out">0</td></tr>
+<tr><td>WiFi access point + hálózatbővítés (1 terem) <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">terem</td><td class="num">250 000</td><td class="num"><input type="number" min="0" step="1" data-price="250000" aria-label="WiFi access point + hálózatbővítés (1 terem) darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Konnektorbővítés, kábelcsatorna, padlódoboz (1 terem) <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">terem</td><td class="num">200 000</td><td class="num"><input type="number" min="0" step="1" data-price="200000" aria-label="Konnektorbővítés, kábelcsatorna, padlódoboz (1 terem) darabszám"></td><td class="num out">0</td></tr>
+<tr><td>3D nyomtató <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">db</td><td class="num">300 000</td><td class="num"><input type="number" min="0" step="1" data-price="300000" aria-label="3D nyomtató darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Mikrokontroller / robotika készlet (1 csapat) <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">készlet</td><td class="num">45 000</td><td class="num"><input type="number" min="0" step="1" data-price="45000" aria-label="Mikrokontroller / robotika készlet (1 csapat) darabszám"></td><td class="num out">0</td></tr>
+<tr class="cat"><th colspan="5">Szaktárgyi eszközök – természettudomány</th></tr>
+<tr><td>Tanulói fénymikroszkóp <span class="src f" title="webshop-ár alapján ellenőrizve">f</span></td><td class="u">db</td><td class="num">26 000</td><td class="num"><input type="number" min="0" step="1" data-price="26000" aria-label="Tanulói fénymikroszkóp darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Digitális mikroszkóp készlet <span class="src f" title="webshop-ár alapján ellenőrizve">f</span></td><td class="u">db</td><td class="num">66 000</td><td class="num"><input type="number" min="0" step="1" data-price="66000" aria-label="Digitális mikroszkóp készlet darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Binokuláris (sztereó) mikroszkóp <span class="src f" title="webshop-ár alapján ellenőrizve">f</span></td><td class="u">db</td><td class="num">258 000</td><td class="num"><input type="number" min="0" step="1" data-price="258000" aria-label="Binokuláris (sztereó) mikroszkóp darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Laborasztal vízvételi hellyel, csappal <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">db</td><td class="num">550 000</td><td class="num"><input type="number" min="0" step="1" data-price="550000" aria-label="Laborasztal vízvételi hellyel, csappal darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Vegyszerszekrény / elszívószekrény <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">db</td><td class="num">450 000</td><td class="num"><input type="number" min="0" step="1" data-price="450000" aria-label="Vegyszerszekrény / elszívószekrény darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Szenzoros mérőkészlet, adatgyűjtő <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">készlet</td><td class="num">180 000</td><td class="num"><input type="number" min="0" step="1" data-price="180000" aria-label="Szenzoros mérőkészlet, adatgyűjtő darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Terepi eszközök (távcső, GPS, mintavétel) <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">készlet</td><td class="num">120 000</td><td class="num"><input type="number" min="0" step="1" data-price="120000" aria-label="Terepi eszközök (távcső, GPS, mintavétel) darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Modellek, preparátumok, térképtár <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">készlet</td><td class="num">150 000</td><td class="num"><input type="number" min="0" step="1" data-price="150000" aria-label="Modellek, preparátumok, térképtár darabszám"></td><td class="num out">0</td></tr>
+<tr class="cat"><th colspan="5">Dráma, bemutató, rendezvény</th></tr>
+<tr><td>Mobil színpadelem, 2×1 m <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">db</td><td class="num">160 000</td><td class="num"><input type="number" min="0" step="1" data-price="160000" aria-label="Mobil színpadelem, 2×1 m darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Színpadi függöny, takarás <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">folyóméter</td><td class="num">25 000</td><td class="num"><input type="number" min="0" step="1" data-price="25000" aria-label="Színpadi függöny, takarás darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Színpadi LED lámpa + állvány <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">db</td><td class="num">90 000</td><td class="num"><input type="number" min="0" step="1" data-price="90000" aria-label="Színpadi LED lámpa + állvány darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Hangosítás: 2 hangfal, keverő, 2 mikrofon <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">készlet</td><td class="num">450 000</td><td class="num"><input type="number" min="0" step="1" data-price="450000" aria-label="Hangosítás: 2 hangfal, keverő, 2 mikrofon darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Jelmez- és kelléktároló szekrény <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">db</td><td class="num">110 000</td><td class="num"><input type="number" min="0" step="1" data-price="110000" aria-label="Jelmez- és kelléktároló szekrény darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Mobil térelválasztó, paraván (1 elem) <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">db</td><td class="num">120 000</td><td class="num"><input type="number" min="0" step="1" data-price="120000" aria-label="Mobil térelválasztó, paraván (1 elem) darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Széktároló kocsi (összecsukható székekhez) <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">db</td><td class="num">130 000</td><td class="num"><input type="number" min="0" step="1" data-price="130000" aria-label="Széktároló kocsi (összecsukható székekhez) darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Összecsukható szék (rendezvényhez) <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">db</td><td class="num">14 000</td><td class="num"><input type="number" min="0" step="1" data-price="14000" aria-label="Összecsukható szék (rendezvényhez) darabszám"></td><td class="num out">0</td></tr>
+<tr class="cat"><th colspan="5">Tér, burkolat, építés</th></tr>
+<tr><td>Akusztikai falpanel <span class="src f" title="webshop-ár alapján ellenőrizve">f</span></td><td class="u">m²</td><td class="num">30 000</td><td class="num"><input type="number" min="0" step="1" data-price="30000" aria-label="Akusztikai falpanel darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Akusztikai mennyezeti elem <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">m²</td><td class="num">25 000</td><td class="num"><input type="number" min="0" step="1" data-price="25000" aria-label="Akusztikai mennyezeti elem darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Padlóburkolat cseréje <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">m²</td><td class="num">12 000</td><td class="num"><input type="number" min="0" step="1" data-price="12000" aria-label="Padlóburkolat cseréje darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Festés, falfelület-javítás <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">m²</td><td class="num">3 500</td><td class="num"><input type="number" min="0" step="1" data-price="3500" aria-label="Festés, falfelület-javítás darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Sötétítő / árnyékoló (1 ablak) <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">db</td><td class="num">60 000</td><td class="num"><input type="number" min="0" step="1" data-price="60000" aria-label="Sötétítő / árnyékoló (1 ablak) darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Szőnyeg olvasósarokhoz (2×3 m) <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">db</td><td class="num">70 000</td><td class="num"><input type="number" min="0" step="1" data-price="70000" aria-label="Szőnyeg olvasósarokhoz (2×3 m) darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Mobil, hangszigetelt tolófal <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">folyóméter</td><td class="num">450 000</td><td class="num"><input type="number" min="0" step="1" data-price="450000" aria-label="Mobil, hangszigetelt tolófal darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Villamos hálózat bővítése (1 terem) <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">terem</td><td class="num">400 000</td><td class="num"><input type="number" min="0" step="1" data-price="400000" aria-label="Villamos hálózat bővítése (1 terem) darabszám"></td><td class="num out">0</td></tr>
+<tr class="cat"><th colspan="5">Ami nem tárgy – de pénzbe kerül</th></tr>
+<tr><td>Tervezői / mérnöki díj (alaprajz, engedélyezés) <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">alkalom</td><td class="num">400 000</td><td class="num"><input type="number" min="0" step="1" data-price="400000" aria-label="Tervezői / mérnöki díj (alaprajz, engedélyezés) darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Tanári műhelynap, továbbképzés (10 fő) <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">alkalom</td><td class="num">150 000</td><td class="num"><input type="number" min="0" step="1" data-price="150000" aria-label="Tanári műhelynap, továbbképzés (10 fő) darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Szállítás, összeszerelés, beüzemelés <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">alkalom</td><td class="num">250 000</td><td class="num"><input type="number" min="0" step="1" data-price="250000" aria-label="Szállítás, összeszerelés, beüzemelés darabszám"></td><td class="num out">0</td></tr>
+<tr><td>Tartalék a csúszásra (a tervezett költség ~10%-a) <span class="src b" title="nagyságrendi becslés">b</span></td><td class="u">–</td><td class="num">0</td><td class="num"><input type="number" min="0" step="1" data-price="0" aria-label="Tartalék a csúszásra (a tervezett költség ~10%-a) darabszám"></td><td class="num out">0</td></tr>
+  </tbody>
+</table>
+
+<div class="bar">
+  <div>
+    <p class="kicker" style="margin:0 0 2px">A terv költsége</p>
+    <p class="tot" id="total">0 Ft</p>
+  </div>
+  <div>
+    <label class="small muted" for="budget">Számolt keret (Ft)</label><br>
+    <input type="number" id="budget" value="12000000" step="500000" style="max-width:160px">
+  </div>
+  <div><p class="rem" id="rem">–</p></div>
+  <div class="no-print">
+    <button class="btn ghost" onclick="window.print()">Nyomtatás / PDF</button>
+    <button class="btn ghost" id="clear" type="button">Törlés</button>
+  </div>
+</div>
+
+<div class="pagenav no-print">
+  <a class="navbtn solid" data-back href="index.html">&larr; Vissza az áttekintéshez</a>
+  <span class="spacer"></span>
+  <a class="navbtn" data-keep href="checklist.html">Tervezési checklist</a>
+</div>
+
+</div>
+
+<script>
+(function(){
+  var NEV = {csaba:'Csaba', laura:'Laura', daniel:'Dániel', nora:'Nóra', befektetok:'a befektetői'};
+  var m = /[?&]from=([a-z]+)/.exec(location.search);
+  var k = m && NEV[m[1]] ? m[1] : null;
+  if (!k) return;
+  var cim = (k === 'befektetok') ? 'Vissza a befektetői kártyához'
+                                 : 'Vissza ' + NEV[k] + ' kártyájához';
+  var url = 'persona/' + k + '.html';
+  document.querySelectorAll('[data-back]').forEach(function(a){
+    a.setAttribute('href', url);
+    a.innerHTML = '\u2190 ' + cim;
+  });
+  document.querySelectorAll('[data-keep]').forEach(function(a){
+    var h = a.getAttribute('href');
+    if (h && h.indexOf('from=') < 0) a.setAttribute('href', h + '?from=' + k);
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var inputs = Array.prototype.slice.call(document.querySelectorAll('input[data-price]'));
+  var totalEl = document.getElementById('total'), remEl = document.getElementById('rem'),
+      budgetEl = document.getElementById('budget');
+  function hu(n){ return n.toLocaleString('hu-HU') + ' Ft'; }
+  function save(){
+    try{ localStorage.setItem('tk-koltseg', JSON.stringify(inputs.map(function(i){return i.value;}).concat([budgetEl.value]))); }catch(e){}
+  }
+  function load(){
+    try{
+      var v = JSON.parse(localStorage.getItem('tk-koltseg')||'null');
+      if (v && v.length === inputs.length+1){
+        inputs.forEach(function(i,k){ i.value = v[k]; });
+        budgetEl.value = v[inputs.length];
+      }
+    }catch(e){}
+  }
+  function calc(){
+    var sum = 0;
+    inputs.forEach(function(i){
+      var q = parseFloat(i.value); if (isNaN(q)||q<0) q=0;
+      var line = q * parseFloat(i.dataset.price);
+      sum += line;
+      var cell = i.closest('tr').querySelector('.out');
+      cell.textContent = line ? line.toLocaleString('hu-HU') : '0';
+      cell.style.color = line ? '' : 'var(--ink-3)';
+    });
+    totalEl.textContent = hu(sum);
+    var b = parseFloat(budgetEl.value); if (isNaN(b)) b = 0;
+    var d = b - sum;
+    remEl.textContent = d >= 0 ? ('Marad: ' + hu(d)) : ('Túllépés: ' + hu(-d));
+    remEl.className = 'rem' + (d < 0 ? ' over' : '');
+    save();
+  }
+  inputs.forEach(function(i){ i.addEventListener('input', calc); });
+  budgetEl.addEventListener('input', calc);
+  document.getElementById('clear').addEventListener('click', function(){
+    inputs.forEach(function(i){ i.value=''; }); calc();
+  });
+  load(); calc();
+})();
+</script>
+</body>
+</html>
