@@ -33,14 +33,12 @@
 </head>
 <body>
 <div class="wrap">
-<a class="backlink no-print" href="index.html">&larr; Vissza az áttekintéshez</a>
+<a class="backlink no-print" data-back href="index.html">&larr; Vissza az áttekintéshez</a>
 
 <header class="page">
-  <p class="kicker">Tervezőcsapatoknak · A tanulás támogatása</p>
+  <p class="kicker">Tervezőcsapatoknak</p>
   <h1>Költségtábla és eszközkalkulátor</h1>
-  <p class="lead">Tájékoztató <strong>bruttó</strong> egységárak 2026 őszi magyar webshopárak alapján.
-  Nem árajánlat – a feladat nem az árak pontossága, hanem a döntés: mi fér bele, és mi marad ki.
-  Írják be a darabszámokat, és a lap alján látják, hol tartanak.</p>
+  <p class="lead">Írják be a darabszámokat, és a lap alján látják, hol tartanak.</p>
   <p class="small muted" style="margin:0">
     <span class="src f">f</span> webshop-ár alapján ellenőrzött nagyságrend &nbsp;·&nbsp;
     <span class="src b">b</span> becslés, piaci tapasztalat alapján</p>
@@ -126,29 +124,33 @@
   </div>
 </div>
 
-<div class="note" style="margin-top:20px">
-  <strong>Amiért nem kell fizetni, de a tervben mégis szerepeljen:</strong> az elrendezés, a használati szabályok,
-  a szokásrend, az átrendezés koreográfiája, és az, hogy ki pakol vissza. A legtöbb jó döntés ingyen van –
-  a befektetőket ezek éppúgy érdeklik, mint a bútorok.
+<div class="pagenav no-print">
+  <a class="navbtn solid" data-back href="index.html">&larr; Vissza az áttekintéshez</a>
+  <span class="spacer"></span>
+  <a class="navbtn" data-keep href="checklist.html">Tervezési checklist</a>
 </div>
 
-<div class="note" style="margin-top:12px">
-  <strong>Nagyságrendi fogódzó:</strong> egy 30 fős tanterem teljes alapbútorzata (asztal, szék, tárolás, tábla)
-  nagyjából 2,5–4 millió forint. Egy interaktív kijelzővel és eszközparkkal felszerelt szaktanterem 8–15 millió.
-  Vagyis a 12 millió körüli keret érdemi, de nem korlátlan: dönteni kell.
 </div>
 
-<p class="tiny muted" style="margin-top:18px">
-  Árforrások (2026. október): iskolabútor – <a href="https://szeknetshop.hu/Iskola-butorok">szeknetshop.hu</a>,
-  <a href="https://szekcentrum.hu/Iskolai-szek">szekcentrum.hu</a> ·
-  interaktív kijelző – <a href="https://interaktiv-kijelzo.arukereso.hu/">arukereso.hu</a>,
-  <a href="https://iskolaellato.hu/Gaoke-A9-Interaktiv-kijelzo-75">iskolaellato.hu</a> ·
-  töltőkocsi – <a href="https://femszekrenyek.eu/45140-laptop-tablet-szekrenyek">femszekrenyek.eu</a> ·
-  mikroszkópok – <a href="https://webshop.balazs-diak.hu/real-tantargyak/biologia/mikroszkopok-bonceszkozok">balazs-diak.hu</a> ·
-  akusztikai panel – <a href="https://hanglabor.hu/akusztikus-hangelnyelo-irodai-iskola-fa-burkolat-ovoda-dekor-falpanel-164">hanglabor.hu</a>.
-</p>
-
-</div>
+<script>
+(function(){
+  var NEV = {csaba:'Csaba', laura:'Laura', daniel:'Dániel', nora:'Nóra', befektetok:'a befektetői'};
+  var m = /[?&]from=([a-z]+)/.exec(location.search);
+  var k = m && NEV[m[1]] ? m[1] : null;
+  if (!k) return;
+  var cim = (k === 'befektetok') ? 'Vissza a befektetői kártyához'
+                                 : 'Vissza ' + NEV[k] + ' kártyájához';
+  var url = 'persona/' + k + '.html';
+  document.querySelectorAll('[data-back]').forEach(function(a){
+    a.setAttribute('href', url);
+    a.innerHTML = '\u2190 ' + cim;
+  });
+  document.querySelectorAll('[data-keep]').forEach(function(a){
+    var h = a.getAttribute('href');
+    if (h && h.indexOf('from=') < 0) a.setAttribute('href', h + '?from=' + k);
+  });
+})();
+</script>
 
 <script>
 (function(){

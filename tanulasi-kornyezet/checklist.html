@@ -51,11 +51,11 @@
 <body>
 <div class="sheet">
 
-<a class="backlink no-print" href="index.html">&larr; Vissza az áttekintéshez</a>
+<a class="backlink no-print" data-back href="index.html">&larr; Vissza az áttekintéshez</a>
 
 <div class="chead">
   <div>
-    <p class="kicker" style="margin-bottom:2px">A tanulás támogatása · tervezési segédlet</p>
+    <p class="kicker" style="margin-bottom:2px">Tervezési segédlet</p>
     <h1 style="margin:0">Tervezési checklist</h1>
     <p class="small muted" style="margin:4px 0 0">Nem minden pontnak kell teljesülnie – de minden pontról
     tudniuk kell, mit döntöttek és miért. A befektetők ugyanebből a listából pontoznak.</p>
@@ -84,7 +84,7 @@
     <p class="q">Amitől a tér nemcsak szép, hanem használható.</p>
     <ul>
       <li>Közlekedés: mindenki a helyére jut anélkül, hogy átmenne egy másik csoporton.</li>
-      <li>Akusztika: két csoport egyszerre is tud beszélgetni – hangelnyelő felülettel, nem csak több m²-rel. <span class="src">(Shield &amp; Dockrell 2008; ANSI/ASA S12.60)</span></li>
+      <li>Akusztika: két csoport egyszerre is tud beszélgetni. <span class="src">(Shield &amp; Dockrell 2008; ANSI/ASA S12.60)</span></li>
       <li>Fény és levegő: természetes fény, szabályozható árnyékolás, szellőzés. <span class="src">(Barrett és mtsai 2015)</span></li>
       <li>Tárolás: minden eszköznek van helye, ahová vissza is kerül.</li>
       <li>Áram ott van, ahol dolgoznak; a kábel nem a padlón fut.</li>
@@ -141,16 +141,11 @@
 
 </div>
 
+<h2 style="margin:22px 0 10px;font-size:1.05rem">Reflexió</h2>
 <div class="three">
-  <div><p class="kicker">Záró kérdés 1</p>Mit tud ez a tér, amit a mostani nem?</div>
-  <div><p class="kicker">Záró kérdés 2</p>Mit hagynánk ki először, ha feleannyi pénz lenne?</div>
-  <div><p class="kicker">Záró kérdés 3</p>Mit néznénk meg három hónap múlva, hogy kiderüljön: működik-e?</div>
-</div>
-
-<div class="warn">
-  <strong>Amit ne írjanak le:</strong> „a jó tanterem 16%-kal növeli a tanulást”. Ez a HEAD-kutatás
-  félreértelmezése – a hibát az egyetem saját sajtóközleménye követte el. A tér hatása valós, de kisebb,
-  és feltételekhez kötött: azon múlik, mit lehet benne csinálni.
+  <div>Mit tud ez a tér, amit a mostani nem?</div>
+  <div>Mit hagynánk ki először, ha feleannyi pénz lenne?</div>
+  <div>Mit néznénk meg három hónap múlva, hogy kiderüljön: működik-e?</div>
 </div>
 
 <p class="srcline">
@@ -160,6 +155,31 @@
   Dumont, Istance &amp; Benavides (2010) <em>The Nature of Learning</em>, OECD.
 </p>
 
+<div class="pagenav no-print">
+  <a class="navbtn solid" data-back href="index.html">&larr; Vissza az áttekintéshez</a>
+  <span class="spacer"></span>
+  <a class="navbtn" data-keep href="koltsegtabla.html">Költségtábla</a>
 </div>
+
+</div>
+<script>
+(function(){
+  var NEV = {csaba:'Csaba', laura:'Laura', daniel:'Dániel', nora:'Nóra', befektetok:'a befektetői'};
+  var m = /[?&]from=([a-z]+)/.exec(location.search);
+  var k = m && NEV[m[1]] ? m[1] : null;
+  if (!k) return;
+  var cim = (k === 'befektetok') ? 'Vissza a befektetői kártyához'
+                                 : 'Vissza ' + NEV[k] + ' kártyájához';
+  var url = 'persona/' + k + '.html';
+  document.querySelectorAll('[data-back]').forEach(function(a){
+    a.setAttribute('href', url);
+    a.innerHTML = '\u2190 ' + cim;
+  });
+  document.querySelectorAll('[data-keep]').forEach(function(a){
+    var h = a.getAttribute('href');
+    if (h && h.indexOf('from=') < 0) a.setAttribute('href', h + '?from=' + k);
+  });
+})();
+</script>
 </body>
 </html>

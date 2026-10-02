@@ -52,14 +52,14 @@
 <body>
 <div class="wrap">
 
-<a class="backlink no-print" href="index.html">&larr; Vissza az áttekintéshez</a>
+<a class="backlink no-print" data-back href="index.html">&larr; Vissza az áttekintéshez</a>
 
 <header class="page">
-  <p class="kicker">Befektetői csoport · A tanulás támogatása</p>
+  <p class="kicker">Befektetői csoport</p>
   <h1>Pontozólap és támogatási döntés</h1>
   <p class="lead">Önök nem zsűri, hanem befektetők: nem azt döntik el, melyik terv a legszebb, hanem azt,
   melyik tervbe tett forint hoz a legtöbb tanulást. Ezért minden pontszámhoz tartozik indoklás,
-  és minden csapat kap egy <strong>feltételt</strong> is – azt, amit a támogatás fejében módosítania kell.</p>
+  és minden csapatnak <strong>javasolnak</strong> is valamit: egy dolgot, amin érdemes továbbdolgozni.</p>
 </header>
 
 <section>
@@ -74,15 +74,11 @@
       <p class="small muted" style="margin:6px 0 0">A pontszámok arányában oszlik el,
       fél millióra kerekítve.</p></div></div>
   </div>
-  <p class="note" style="margin-top:12px">A szabály négy csapatra van beállítva, de bármennyire működik:
-  az alapkeret egyenlően oszlik a csapatok között, a teljesítménykeret pontarányosan.</p>
+
 </section>
 
 <section style="margin-top:34px">
   <h2>Hat szempont, 1–4 pont</h2>
-  <p class="small muted" style="margin-bottom:12px">A leírás az <strong>1</strong> és a <strong>4</strong> pontot rögzíti;
-  a 2 és a 3 a kettő között van. Ha az 1. vagy a 2. szempont 1 pontot kap, a csapat kötelezően kap egy
-  <strong>feltételt</strong> is: azt az egy dolgot, amit módosítania kell.</p>
   <div class="rub">
 
     <div class="rc"><h3><span class="n">1</span> Pedagógiai illeszkedés</h3>
@@ -133,7 +129,7 @@
 <section style="margin-top:34px" id="pontozas">
   <h2>Pontozólap</h2>
   <p class="small muted">Írják be a csapatok nevét, majd a pontokat. A táblázat magától összead,
-  és kiszámolja a támogatást. Nyomtatva üres lapként is használható.</p>
+  és kiszámolja a támogatást.</p>
   <table class="scoretable" style="margin-top:10px">
     <thead>
       <tr><th>Szempont</th>
@@ -158,13 +154,6 @@
     <p class="small" id="fejl" style="margin:12px 0 0"></p>
   </div>
 
-  <details class="note no-print" style="margin-top:12px">
-    <summary style="cursor:pointer;font-weight:600">Számpélda (ha a kalkulátor nem elérhető)</summary>
-    <p style="margin:10px 0 0">Pontok: 22 · 20 · 17 · 14 (összesen 73). Teljesítménykeret 30 M, pontarányosan:
-    30 × 22/73 = 9,04 → <strong>9,0</strong> · 20/73 = 8,22 → <strong>8,0</strong> ·
-    17/73 = 6,99 → <strong>7,0</strong> · 14/73 = 5,75 → <strong>6,0</strong> millió.
-    Az alapkerettel (5 M/csapat) együtt: <strong>14,0 · 13,0 · 12,0 · 11,0 millió = 50 M</strong>.</p>
-  </details>
 </section>
 
 <section style="margin-top:34px">
@@ -172,7 +161,7 @@
   <p class="small muted">A pontszám önmagában nem visszajelzés. Minden csapat ezt a hármat kapja meg szóban is.</p>
   <table style="margin-top:10px">
     <thead><tr><th style="width:17%">Csapat</th><th>Ami meggyőzött</th>
-      <th>Amire nem kaptunk választ</th><th>A támogatás feltétele</th></tr></thead>
+      <th>Amire nem kaptunk választ</th><th>Javaslat a folytatáshoz</th></tr></thead>
     <tbody>
       <tr><td style="height:3.2em">1.</td><td></td><td></td><td></td></tr>
       <tr><td style="height:3.2em">2.</td><td></td><td></td><td></td></tr>
@@ -188,15 +177,41 @@
     <li><strong>Megegyezés.</strong> Melyik szempontban nem engednek? Mit jelent náluk a 4-es? Ki vezeti a pontozást?</li>
     <li><strong>Közbenső látogatás.</strong> Kérdeznek, de nem tanácsolnak – ebből lesznek a záró kérdéseik.</li>
     <li><strong>Bemutatók.</strong> Pontozás menet közben, egymástól függetlenül; minden bemutató után legalább egy kérdés.</li>
-    <li><strong>Döntés és kihirdetés.</strong> Összesítés, majd csapatonként: összeg, egy mondat indoklás, egy feltétel.</li>
+    <li><strong>Döntés és kihirdetés.</strong> Összesítés, majd csapatonként: összeg, egy mondat indoklás, egy javaslat.</li>
   </ol>
   <div class="note" style="margin-top:14px">
-    <strong>Amire figyeljenek:</strong> a befektetői szerep legnagyobb kockázata, hogy szépségversennyé alakítja a feladatot.
-    Ezt a feltétel ellensúlyozza: a döntés nem ítélet, hanem megbízás a folytatásra.
+    <strong>Amire figyeljenek:</strong> a terveket a tanulás szempontjából értékeljék – nem az a kérdés,
+    melyik terem a legszebb, hanem hogy melyikben lehet jobban tanulni.
   </div>
 </section>
 
+<div class="pagenav no-print">
+  <a class="navbtn solid" data-back href="index.html">&larr; Vissza az áttekintéshez</a>
+  <span class="spacer"></span>
+  <a class="navbtn" data-keep href="checklist.html">Tervezési checklist</a>
 </div>
+
+</div>
+
+<script>
+(function(){
+  var NEV = {csaba:'Csaba', laura:'Laura', daniel:'Dániel', nora:'Nóra', befektetok:'a befektetői'};
+  var m = /[?&]from=([a-z]+)/.exec(location.search);
+  var k = m && NEV[m[1]] ? m[1] : null;
+  if (!k) return;
+  var cim = (k === 'befektetok') ? 'Vissza a befektetői kártyához'
+                                 : 'Vissza ' + NEV[k] + ' kártyájához';
+  var url = 'persona/' + k + '.html';
+  document.querySelectorAll('[data-back]').forEach(function(a){
+    a.setAttribute('href', url);
+    a.innerHTML = '\u2190 ' + cim;
+  });
+  document.querySelectorAll('[data-keep]').forEach(function(a){
+    var h = a.getAttribute('href');
+    if (h && h.indexOf('from=') < 0) a.setAttribute('href', h + '?from=' + k);
+  });
+})();
+</script>
 
 <script>
 (function(){
