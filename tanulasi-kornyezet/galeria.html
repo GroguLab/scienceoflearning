@@ -14,9 +14,54 @@
   figure h2{font-size:1rem;margin:0 0 9px;color:var(--ink-2)}
   .spoiler{background:var(--surface);border:2px solid var(--accent);border-radius:12px;
            padding:16px 18px;margin-bottom:28px}
+
+  html.zar body > .wrap{display:none}
+  #kapu{max-width:420px;margin:16vh auto 0;background:var(--surface);border:1px solid var(--line);
+        border-radius:14px;padding:26px 24px;box-shadow:var(--shadow);text-align:left}
+  #kapu h2{margin:0 0 6px;font-size:1.15rem}
+  #kapu p{margin:0 0 16px;color:var(--ink-3);font-size:.92rem}
+  #kapu input{width:100%;margin-bottom:10px}
+  #kapu .hiba{color:#B5541F;font-size:.86rem;margin:0;display:none}
+  html:not(.zar) #kapu{display:none}
 </style>
+
+<script>
+(function(){
+  var H = 375689741, KULCS = 'tk-oktatoi';
+  function hash(s){ var x=5381; for(var i=0;i<s.length;i++){ x=((x*33)^s.charCodeAt(i))>>>0; } return x; }
+  var nyitva = false;
+  try { nyitva = sessionStorage.getItem(KULCS) === '1'; } catch(e){}
+  if (!nyitva) document.documentElement.classList.add('zar');
+  document.addEventListener('DOMContentLoaded', function(){
+    var f = document.getElementById('kapuform');
+    if (!f) return;
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var v = document.getElementById('kapujelszo').value.trim();
+      if (hash(v) === H){
+        try { sessionStorage.setItem(KULCS,'1'); } catch(e){}
+        document.documentElement.classList.remove('zar');
+      } else {
+        document.getElementById('kapuhiba').style.display='block';
+        document.getElementById('kapujelszo').value='';
+      }
+    });
+  });
+})();
+</script>
 </head>
 <body>
+
+<div id="kapu">
+  <h2>Galéria</h2>
+  <p>A látványtervek csak a bemutatók után kerülnek elő. Add meg a jelszót.</p>
+  <form id="kapuform" autocomplete="off">
+    <input type="password" id="kapujelszo" placeholder="Jelszó" aria-label="Jelszó" autofocus>
+    <button class="btn" type="submit">Belépés</button>
+  </form>
+  <p class="hiba" id="kapuhiba">Nem jó jelszó.</p>
+</div>
+
 <div class="wrap">
 <a class="backlink" href="oktato.html">&larr; Vissza az oktatói segédlethez</a>
 
